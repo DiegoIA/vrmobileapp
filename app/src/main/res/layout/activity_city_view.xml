@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativecityv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.studios.jedi.diegoa_hp.vr_explora_veracruz.Activities.CityViewActivity">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/darker_gray"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/textCityView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/prueba"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#fff"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:id="@+id/scrolView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="60dp"
+        android:animationCache="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp">
+
+            <ImageButton
+                android:id="@+id/ecobtn"
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:padding="0dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/ecotbtn"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/acercabtn"
+                android:layout_width="wrap_content"
+                android:layout_height="140dp"
+                android:layout_below="@+id/ecobtn"
+                android:layout_marginTop="15dp"
+                android:padding="0dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/acercabtn"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/ubicabtn"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_below="@+id/acercabtn"
+                android:layout_marginTop="15dp"
+                android:padding="0dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/ubicacionbtn"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/gastrobtn"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_below="@+id/ubicabtn"
+                android:layout_marginTop="15dp"
+                android:padding="0dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/gastrobtn"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/eventobtn"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_below="@+id/gastrobtn"
+                android:layout_marginTop="15dp"
+                android:padding="0dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/eventosbtn"
+                tools:ignore="ContentDescription"
+                android:layout_marginBottom="30dp"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

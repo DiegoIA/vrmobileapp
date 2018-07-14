@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Explora Veracruz</string>
+    <string name="title_activity_maps_view">Map</string>
+    <string name="prueba">Ciudad</string>
+    <string name="coatza1">Coatzacoalcos, también llamado “La Puerta del Sureste”  por su ubicación geográfica privilegiada con vías de acceso de primer nivel ya sea por tierra, mar o aire.\n \n
+        Su moderna infraestructura facilita y permite el crecimiento urbano, industrial, carretero, ferroviario, portuario, y de servicios de esta ciudad, posicionándola como destino prometedor para todo tipo de inversiones.</string>
+    <string name="coatza2">Coatzacoalcos cuenta con variadas playas paradisíacas para que disfrute del sol y el mar al máximo, además las mismas son propicias para realizar todo tipo de deportes acuáticos, donde la gente se divierte y al mismo tiempo mantiene contacto con la naturaleza.</string>
+    <string name="mina1">En honor a Don Francisco Javier Mina fue nombrado el municipio, limita al norte con Coatzacoalcos.\n
+        Su riqueza está representada con bosques altos de bejuco y plantas epífitas que permanecen siempre verdes donde se desarrolla una fauna de conejos, venados, iguanas y tlacuaches.\n\n
+        Un lugar ideal para visitar y recorrer cada calle de este hermoso municipio</string>
+    <string name="mina2">Para aquellas personas en busca de diversión se encuentra una de las más grandes fiestas en todo Minatitlán, el carnaval, puedes encontrar juegos pirotécnicos, danzas folklóricas, carreras de caballo.</string>
+    <string name="pajapan1">También conocido en náhuatl como “En el agua o río del heno”, ubicado en las estribaciones de la sierra de San Martín.\n\n
+        Cuenta con ríos, arroyos y lagunas perfectos para una tarde llena de actividades acuáticas rodeados de grandes bosques tropicales y una fauna rica compuesta por coyotes, búhos, reptiles y garzas.\n\n
+        Encontrarás un deleite gastronómico lleno de tamales, mariscos, guisados de animales silvestres y platillos oaxaqueños.</string>
+    <string name="title_activity_maps">Map</string>
+</resources>
