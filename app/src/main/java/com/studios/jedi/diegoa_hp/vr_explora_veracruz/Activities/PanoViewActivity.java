@@ -16,6 +16,13 @@ import android.util.Log;
 import android.util.Pair;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.vr.sdk.widgets.pano.VrPanoramaEventListener;
 import com.google.vr.sdk.widgets.pano.VrPanoramaView;
 import com.google.vr.sdk.widgets.pano.VrPanoramaView.Options;
@@ -25,9 +32,14 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
+import com.studios.jedi.diegoa_hp.vr_explora_veracruz.Entities.PanoImages;
 import com.studios.jedi.diegoa_hp.vr_explora_veracruz.R;
 
-public class PanoViewActivity extends AppCompatActivity {
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+public class PanoViewActivity extends AppCompatActivity
+        implements Response.Listener<JSONObject>, Response.ErrorListener{
 
     private static final String TAG = PanoViewActivity.class.getSimpleName();
     /**Panorama Widget Actual**/
@@ -42,6 +54,12 @@ public class PanoViewActivity extends AppCompatActivity {
 
     private String cityName="";
 
+    private String identifier;
+    RequestQueue request;
+    JsonObjectRequest jsonObjectRequest;
+
+    PanoImages panim = new PanoImages();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +69,8 @@ public class PanoViewActivity extends AppCompatActivity {
         panoramaView = (VrPanoramaView) findViewById(R.id.pano_view);
         panoramaView.setEventListener(new ActivityEventListener());
 
+        request = Volley.newRequestQueue(this);
+
         Bundle bundle = getIntent().getExtras();
 
         if (bundle != null && bundle.getString("cityPV") != null ){
@@ -58,9 +78,14 @@ public class PanoViewActivity extends AppCompatActivity {
             //textView.setText(lugar);
             cityName=(lugar+".jpg");
 
+            if(lugar == "Coatzacoalcos"){
+                identifier = "1";
+            }
         }
 
         handleIntent(getIntent());
+
+        loadWebService();
 
 
     }
@@ -133,6 +158,39 @@ public class PanoViewActivity extends AppCompatActivity {
         }
         super.onDestroy();
     }
+
+    /**  A partir de aqui, se intenta conectar con el webService para traer la imagen*/
+    public void loadWebService(){
+        //Consulta de datos, se envian los parametros al json
+        String url="https://daixba.com/vrmobileapp/webJsonConsultImage.php?identifier="+identifier;
+
+
+        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,url,null,
+                this,this);
+        request.add(jsonObjectRequest);
+    }
+
+    @Override
+    public void onErrorResponse(VolleyError error) {
+        Toast.makeText(this, "No se puede cargar la imagen" + error.toString(),
+                Toast.LENGTH_SHORT);
+        Log.i("ERROR",error.toString());
+    }
+
+    @Override
+    public void onResponse(JSONObject response) {
+//        PanoImages panim = new PanoImages();
+        JSONArray json = response.optJSONArray("usuarios");
+        JSONObject jsonObject = null;
+
+        try {
+            jsonObject = json.getJSONObject(0);
+            //panim.setData();
+        }catch(Exception e){
+
+        }
+    }
+    /** Fin del intento de obtener la imagen*/
 
     /**
      * Helper class to manage threading.
